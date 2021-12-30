@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js</title>
+  <link rel="stylesheet" href="TossTheCoin.css">
+  <style>
+    body {
+      margin-top: 200px;
+      font-weight: bolder;
+      font-family: cursive;
+      font-size: 20px;
+    }
+
+    .container {
+      background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 240, 30));
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 20px;
+      outline-style: solid;
+      text-align: center;
+    }
+
+    #result {
+      color: rgb(179, 13, 13);
+    }
+
+    #msg {
+      color: rgb(189, 20, 20);
+      font-family: serif;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 20px;
+      margin-top: 10px;
+      font-family: cursive;
+      border-radius: 20px;
+      border-color: black;
+      font-weight: bold;
+      background-image: linear-gradient(rgb(255, 255, 255), rgb(77, 201, 19));
+    }
+  </style>
+</head>
+
+<body>
+  <audio src="demo-images/download.mp3" id="audio"></audio>
+  <audio src="demo-images/crowd-cheer.mp3" id="audio1"></audio>
+  <audio src="demo-images/Oh no.mp3" id="audio2"></audio>
+  <div class="container">
+    <h1 id="title"><u>Toss-The-Coin Game</u></h1>
+    <h1 id="result"></h1>
+    <h2 id="msg"></h2>
+    </h3>
+    <p>Please click the button given below<br><br>👇</p>
+    <button onclick="toss()">Toss the Coin</button>
+  </div>
+
+
+  <script>
+    function toss() {
+      let audio = document.getElementById('audio');
+      audio.play();
+      let num = Math.floor(Math.random() * 100);
+      if (num % 2 == 0) {
+        let audio1 = document.getElementById('audio1');
+        audio1.play();
+        document.getElementById('result').innerText = 'It\'s Heads !!';
+        document.getElementById('msg').innerText = 'Congrats You WON!!!🥳🎉🔥✨';
+      }
+      else {
+        let audio1 = document.getElementById('audio2');
+        audio2.play();
+        document.getElementById('result').innerText = 'Tail !!';
+        document.getElementById('msg').innerText = 'Better luck next time!!😔';
+      }
+    }
+  </script>
+</body>
+
+</html>
